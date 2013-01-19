@@ -13,14 +13,23 @@ Item Style example:
 
 Initially create Month_Short as a variable with Modified date as below (this will make a variable based on the Date modified of the item)
 
-<xsl:variable name="Month_Short">
-  <xsl:value-of select="substring(@Modified,6,2)"/>
-</xsl:variable>
+<pre>
+  <code>
+    &lt;xsl:variable name="Month_Short"&gt;
+      &lt;xsl:value-of select="substring(@Modified,6,2)"/&gt;
+    &lt;/xsl:variable&gt;
+  </code>
+</pre>
+
 
 The below will create a variable based on the above variable returning the month code 12 as 'Dec'
 
-<xsl:variable name="Month">
-  <xsl:call-template name="OuterTemplate.cfShortMonth">
-    <xsl:with-param name="MonthShort" select="$Month_Short"/>
-  </xsl:call-template>
-</xsl:variable>
+<pre>
+  <code>
+    &lt;xsl:variable name="Month"&gt;
+      &lt;xsl:call-template name="OuterTemplate.cfShortMonth"&gt;
+        &lt;xsl:with-param name="MonthShort" select="$Month_Short"/&gt;
+      &lt;/xsl:call-template&gt;
+    &lt;/xsl:variable>
+  </code>
+</pre>
